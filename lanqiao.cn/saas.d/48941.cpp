@@ -4,6 +4,7 @@ using std::cin, std::cout, std::endl;
 #include<vector>
 #include<tuple>
 #include<functional>
+#include<algorithm>
 using uint = unsigned int;
 using ull = unsigned long long;
 using ll = long long;
@@ -14,58 +15,87 @@ using uch = unsigned char;
 uint n,m;
 #define N 31
 uint in[N]; // should indirectly multiply every input by 2
-std::map<uint,uint> map; // weight->#cut. should only contain those with total weight<m
+std::map<uint,uint> map; // remain_weight->#cut. should only contain those with total weight<m
 
 template<typename Func>
-void inline update_map(const uint k, const uint v, const Func &update = [](const decltype(map)::iterator &dst, const uint src)_{dst->second = src;})_{
-	const auto lb=map.lower_bound(k);
-	if(lb!=map.end() && lb->first==k){
-		update(lb, v);
+void inline update_map(const uint k, const uint v, const Func &&update /*= [](const decltype(map)::iterator &dst, const uint src)_{dst->second = src;}*/)_{
+	if(const auto find=map.find(k); find!=map.end()){
+		update(find, v);
 	}
 	else{
-		map.emplace_hint(lb, k, v);
+		map.emplace_hint(find, k, v);
 	}
 }
 
 uint ans=N;
 
-void inline dfs2(){ // DFS1 is already done by binary compression.
+uint thresh;
+void inline dfs1(uint i, uint remain_weight, uint cut)_{ // Going to consider item i+1; already considered item i, rem_w,cut cover items <=i
+// cout<<"1: "<<i<<"; rem_w="<<remain_weight<<"; cut="<<cut<<endl;
+	if(i==thresh || remain_weight==0){
+		update_map(remain_weight, cut, [](const decltype(map)::iterator &dst, const uint src){
+			if(dst->second > src){
+				dst->second = src;
+			}
+		});
+		return;
+	}
+	i++;
+	if(in[i] <= remain_weight){
+		dfs1(i, remain_weight - in[i], cut+1);
+		if(in[i]<<1 <= remain_weight){
+			dfs1(i, remain_weight - (in[i]<<1), cut);
+		}
+	}
+	dfs1(i, remain_weight, cut);
+}
+
+void inline dfs2(uint i, uint remain_weight, uint cut)_{
+// cout<<"2: "<<i<<"; rem_w="<<remain_weight<<"; cut="<<cut<<endl;
+	if(cut>=ans){
+		return;
+	}
+	if(i==n || remain_weight==0){ // Finished
+// cout<<"Finding remain_weight="<<remain_weight<<"..."<<endl;
+		if(const auto find = map.find(m - remain_weight); find!=map.end()){
+// cout<<"Minimizing ans "<<ans;
+			if(const auto tmp_cut=cut+find->second; ans>tmp_cut){ // minimizing ans
+// cout<<" to "<<tmp_cut;
+				ans = tmp_cut;
+			}
+// cout<<endl;
+		}
+		return;
+	}
+	i++;
+	if(in[i] <= remain_weight){
+		dfs2(i, remain_weight - in[i], cut+1);
+		if(in[i]<<1 <= remain_weight){
+			dfs2(i, remain_weight - (in[i]<<1), cut);
+		}
+	}
+	dfs2(i, remain_weight, cut);
 }
 
 int main()_{
 	std::ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-	map.emplace(0,0);
 	cin>>n>>m; m<<=1;
-	std::vector<std::pair<uint, uint>> news(n); uint l;
+	thresh = n>4 ? (n>>1)-2 : 0;
 	for(uint i=0;i<n;i++){
-// for(const auto &[k,v]:map){
-// 	cout<<'#'<<k<<','<<v<<endl;
-// }
 		cin>>in[i];
-		l=0;
-		for(const auto &[weight, cut]: map){
-			const auto max_add = m - weight;
-			if(in[i] <= max_add){
-				news[l++] = {weight+in[i], cut+1, };
-				if(in[i]<<1 <= max_add){
-					news[l++] = {weight+(in[i]<<1), cut, };
-				}
-			}
-		}
-		for(uint j=0;j<l;j++){
-			update_map(news[j].first, news[j].second, [](const decltype(map)::iterator &dst, const uint src)_{
-				if(dst->second > src){
-					dst->second = src;
-				}
-			});
-		}
 	}
-	const auto lb=map.lower_bound(m);
-	if(lb!=map.end() && lb->first==m){
-		cout<<lb->second<<endl;
+	std::sort(in, in+n);
+
+	dfs1(-1, m, 0);
+// for(const auto &[k,v]:map){
+// 	cout<<k<<": "<<v<<endl;
+// }
+	dfs2(thresh, m, 0);
+	if(ans==N){
+		cout<<"-1"<<endl;
 	}
 	else{
-		cout<<"-1"<<endl;
+		cout<<ans<<endl;
 	}
 	return 0;
 }
