@@ -1,0 +1,98 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Current File - BiS",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb - BiS",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "Compile Current File - BiS",
+			"miDebuggerPath": "gdb", // 根据实际路径修改
+			"logging": {
+				"moduleLoad": false,
+				"trace": true
+			}
+		},
+		// {
+		//     "name": "Compile Only - BiS",
+		//     "type": "cppdbg",
+		//     "request": "launch",
+		//     "program": "${fileDirname}/${fileBasenameNoExtension}",
+		//     "args": [],
+		//     "stopAtEntry": false,
+		//     "cwd": "${fileDirname}",
+		//     "externalConsole": false,
+		//     "MIMode": "gdb",
+		//     "preLaunchTask": "Compile Current File - BiS", // 只执行编译任务
+		//     "miDebuggerPath": "gdb",
+		//     "logging": {
+		//         "moduleLoad": false
+		//     },
+		//     // "purpose":["debug-in-terminal"],
+		//     // "justMyCode": false,
+		//     "launchCompleteCommand": "None" // 编译后退出，不运行
+		// },
+		// {
+		//     "name": "Run Only - BiS",
+		//     "type": "cppdbg",
+		//     "request": "launch",
+		//     "program": "${fileDirname}/${fileBasenameNoExtension}",
+		//     "args": [],
+		//     "stopAtEntry": false,
+		//     "cwd": "${fileDirname}",
+		//     "externalConsole": false,
+		//     "MIMode": "gdb",
+		//     "setupCommands": [
+		//         {
+		//             "description": "Enable pretty-printing for gdb - BiS",
+		//             "text": "-enable-pretty-printing",
+		//             "ignoreFailures": true
+		//         }
+		//     ],
+		//     "preLaunchTask": "",
+		//     "miDebuggerPath": "gdb",
+		//     "logging": {
+		//         "moduleLoad": false,
+		//         "trace": true
+		//     }
+		// },
+		// {
+		//     "name": "Compile and Run - BiS",
+		//     "type": "cppdbg",
+		//     "request": "launch",
+		//     "program": "${fileDirname}/${fileBasenameNoExtension}",
+		//     "args": [],
+		//     "stopAtEntry": false,
+		//     "cwd": "${fileDirname}",
+		//     "externalConsole": false,
+		//     "MIMode": "gdb",
+		//     "setupCommands": [
+		//         {
+		//             "description": "Enable pretty-printing for gdb - BiS",
+		//             "text": "-enable-pretty-printing",
+		//             "ignoreFailures": true
+		//         }
+		//     ],
+		//     "preLaunchTask": "Compile Current File - BiS",
+		//     "miDebuggerPath": "gdb",
+		//     "logging": {
+		//         "moduleLoad": false
+		//     },
+		//     // "justMyCode": false,
+		//     "launchCompleteCommand": "exec-run"
+		// },
+	],
+}

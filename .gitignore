@@ -1,0 +1,5 @@
+.*
+!.git*
+!.vscode
+test.d
+*.exe

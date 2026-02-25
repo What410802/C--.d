@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		// "macros.list": {
+		// 	// 定义一个名为 "repeatRunCpp" 的宏，重复运行 "Run Only" 任务
+		// 	"loopRunCpp": [
+		// 		{
+		// 		// 要执行的命令列表（这里调用你的 Run Only 任务）
+		// 		// "command": 
+		// 		// 	{
+		// 				"command": "workbench.action.tasks.runTask",
+		// 				"args": "Run Only - BiS", // 你的任务 label，必须完全一致
+		// 		// 	},
+		// 		// // 重复配置（核心）
+		// 		// "args": {
+		// 			"times": -1, // 重复次数：-1 表示无限循环，可改为具体数字（如 10 表示运行10次）
+		// 		// 	// "delay": 100 // 每次运行间隔（毫秒），可根据需要调整
+		// 		// }
+		// 		},
+		// 		{
+		// 			"command": "macros.loopRunCpp"
+		// 		}
+		// 	],
+		// }
+	}
+}
