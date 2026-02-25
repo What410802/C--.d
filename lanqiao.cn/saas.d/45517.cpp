@@ -38,10 +38,9 @@ int main()_{
 	while(!q.empty()){
 		// cout<<'#'<<q.size()<<endl;
 		// const auto [t_t,t_id]=*q.begin(); q.erase(q.begin());
-		const auto t_t = q.begin()->first, t_id = q.begin()->second; q.erase(q.begin());
+		const auto &&[t_t, t_id] = std::move(*q.begin()); q.erase(q.begin());
 		// cout<<'h'<<endl;
-		for(const auto tpair:map){
-			const auto tt_id = tpair.first, tt_t=tpair.second; // This is so strange! Same thing as before.
+		for(const auto &[tt_id, tt_t]:map){
 			// cout<<'j'<<endl;
 			if(const auto new_id = alg[t_id][tt_id]; new_id){
 				// cout<<"##"<<new_id<<endl;
