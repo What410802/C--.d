@@ -3,7 +3,9 @@
 ## VSCode Configuration for C++ Algorithm Competition
 
 Prerequisites:
-- Bun ([bun.sh](bun.sh)) in your computer, for looping running a compiled .exe file. (Or anything you like. :\) If you do not need this feature, you can skip this.)
+- Bun  in your computer, for looping running a compiled .exe file. (Or anything you like. :\) If you do not need this feature, you can skip this.)
+	- Install Bun ([<img src="README_assets/bun.svg" style="height: 1em; vertical-align: text-bottom;"> <img src="README_assets/bun_text.png" style="height: 1em; vertical-align: text-bottom;"> bun.sh](bun.sh));
+	- `cd Utility.d` and `bun install`.
 - gcc/g++ in your computer and added to the path in environment variables.
 - ~~Have VSCode (or other similar pow4 text editor) installed,~~ and copy the contents of `.vscode/keybindings.not-here.json` to your favorite `keybindings.json`:
 
