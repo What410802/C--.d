@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    // Environment setup & latest features
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "nodenext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    // Bundler mode
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    // "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Some stricter flags (disabled by default)
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false,
+
+    "types": ["node"],
+  }
+}
+
+// {
+//   "compilerOptions": {
+//     "target": "ES2020",                // 目标 ECMAScript 版本
+//     // "module": "commonjs",               // Node.js 使用 CommonJS 模块
+//     // "moduleResolution": "node",          // 模块解析策略
+//     "esModuleInterop": true,             // 允许默认导入 CommonJS 模块
+//     "allowSyntheticDefaultImports": true, // 同上，兼容性选项
+//     "outDir": "./dist",                  // 编译输出的文件夹（可选）
+//     "rootDir": "./",                      // 源码根目录
+//     "strict": true,                       // 启用所有严格类型检查
+//     "skipLibCheck": true,                  // 跳过库类型检查
+//     // "types": ["node"]                      // 加载 Node.js 类型定义
+//   },
+//   "include": [
+//     "scripts/**/*"                         // 只编译 scripts 文件夹下的 .ts 文件
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }

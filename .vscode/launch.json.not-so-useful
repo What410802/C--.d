@@ -1,0 +1,20 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run Only (in launch.json) - BiS",
+			"type": "cppdbg",
+			"request": "launch",
+
+			"preLaunchTask": "Compile Current File - BiS",
+			"program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+			"args": [],
+			"stopAtEntry": false,
+			// "cwd": "${fileDirname}",
+			// "environment": [],
+			// "externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "gdb.exe",
+		},
+	]
+}

@@ -1,0 +1,27 @@
+[
+	{
+		"key": "f9",
+		"command": "workbench.action.tasks.runTask",
+		"args": "Compile Current File - BiS",
+		"when": "editorLangId == cpp && editorTextFocus"
+	},
+	{
+		"key": "f10",
+		"command": "workbench.action.tasks.runTask",
+		"args": "Run Only - BiS",
+		"when": "editorLangId == cpp && editorTextFocus"
+	},
+	{
+		"key": "f11",
+		"command": "workbench.action.tasks.runTask",
+		"args": "Compile and Run - BiS",
+		"when": "editorLangId == cpp && editorTextFocus"
+	},
+	{
+		"key": "ctrl+f10",
+		"command": "workbench.action.tasks.runTask",
+		"args": "Run Only - BiS",
+		"when": "editorLangId == cpp && editorTextFocus"
+	}
+]
+/// These should be placed in "%USERPROFILE%\AppData\Roaming\Code\User\profiles\353a5650\keybindings.json" (for a single profile numbered 353a5650) or "%USERPROFILE%\AppData\Roaming\Code\User\keybindings.json" (for a user)!

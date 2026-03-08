@@ -4,6 +4,11 @@
 		{
 			"label": "Compile Current File - BiS",
 			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true,
+			},
+
 			"command": "g++",
 			"args": [
 				"-Wpedantic",
@@ -11,78 +16,70 @@
 				"-Wextra",
 				"-std=c++17",
 				"-O2",
-
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/${fileBasenameNoExtension}",
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
+			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"echo": true,
 				"reveal": "silent",
 				"focus": false,
-				"panel": "shared"
-			}
+				"panel": "shared",
+			},
 		},
 		{
 			"label": "Run Only - BiS",
 			"type": "shell",
-			"command": "${fileDirname}/${fileBasenameNoExtension}",
 			"group": {
-				"kind": "test",
-				// "isDefault": true
+				"kind": "test"
 			},
+
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
 				"focus": true,
-				"panel": "shared"
+				"panel": "shared",
 			},
-			"problemMatcher": []
 		},
 		{
 			"label": "Looped Run - BiS",
 			"type": "shell",
-			"command": "${command:macros.loopRunCpp}",
-			// "group": {
-			//     "kind": "test",
-			//     // "isDefault": true
-			// },
-			// "presentation": {
-			//     "echo": true,
-			//     "reveal": "always",
-			//     "focus": true,
-			//     "panel": "shared"
-			// },
-			"problemMatcher": []
-		},
-		{
-			"label": "Compile and Run - BiS",
-			"type": "shell",
-			"dependsOn": [
-				"Compile Current File - BiS"
-			],
-			"command": "${fileDirname}/${fileBasenameNoExtension}",
-			"group": {
-				"kind": "test",
-				// "isDefault": true
+			
+			"options": {
+				"cwd": "${workspaceFolder}/Utility.d",
 			},
+			"command": "bunx", // "${command:macros.loopRunCpp}", // in `.vscode/settings.json`
+			"args": [
+				"ts-node",
+				"${workspaceFolder}/Utility.d/ExeLoop.ts",
+				"${fileDirname}/${fileBasenameNoExtension}",
+			],
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
 				"focus": true,
-				"panel": "shared"
+				"panel": "shared",
 			},
-			"problemMatcher": [
-				"$gcc"
-			]
+		},
+		{
+			"label": "Compile and Run - BiS",
+			"type": "shell",
+			"group": {
+				"kind": "test"
+			},
+
+			"dependsOn": ["Compile Current File - BiS"],
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"problemMatcher": ["$gcc"],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
 		},
 	]
 }

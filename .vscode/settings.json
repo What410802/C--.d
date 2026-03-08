@@ -1,57 +1,23 @@
 {
-	"files.associations": {
-		"array": "cpp",
-		"string_view": "cpp",
-		"initializer_list": "cpp",
-		"ranges": "cpp",
-		"span": "cpp",
-		"atomic": "cpp",
-		"bit": "cpp",
-		"cctype": "cpp",
-		"charconv": "cpp",
-		"clocale": "cpp",
-		"cmath": "cpp",
-		"compare": "cpp",
-		"concepts": "cpp",
-		"cstdarg": "cpp",
-		"cstddef": "cpp",
-		"cstdint": "cpp",
-		"cstdio": "cpp",
-		"cstdlib": "cpp",
-		"cwchar": "cpp",
-		"cwctype": "cpp",
-		"deque": "cpp",
-		"set": "cpp",
-		"string": "cpp",
-		"unordered_map": "cpp",
-		"vector": "cpp",
-		"exception": "cpp",
-		"algorithm": "cpp",
-		"functional": "cpp",
-		"iterator": "cpp",
-		"memory": "cpp",
-		"memory_resource": "cpp",
-		"numeric": "cpp",
-		"optional": "cpp",
-		"random": "cpp",
-		"system_error": "cpp",
-		"tuple": "cpp",
-		"type_traits": "cpp",
-		"utility": "cpp",
-		"iosfwd": "cpp",
-		"limits": "cpp",
-		"new": "cpp",
-		"numbers": "cpp",
-		"stdexcept": "cpp",
-		"streambuf": "cpp",
-		"text_encoding": "cpp",
-		"typeinfo": "cpp",
-		"variant": "cpp",
-		"iostream": "cpp",
-		"ctime": "cpp",
-		"map": "cpp",
-		"format": "cpp",
-		"istream": "cpp",
-		"ostream": "cpp"
-	}
+	"BiS.Dev-C++-hotkeys.enabled": true, // VSCode does not support per-project configuration of keybindings.json, so I wrote the settings for hotkeys in per-profile settings, and use this enable=true to enable them for this project (in case sometimes these keybindings need to be turned off).
+	// "macros.list": { // depends on extension "macros" by "ctf0"
+	// 	"runCpp": [
+	// 		{
+	// 			"command": "workbench.action.tasks.runTask",
+	// 			"args": "Run Only - BiS",
+	// 		},
+	// 	],
+	// 	"loopRunCpp": [ // Run 32 times. Enough.
+	// 		"macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp",
+	// 		"macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp",
+	// 		"macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp",
+	// 		"macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp", "macros.runCpp",
+	// 		// {
+	// 		// 	"command": "runCpp",
+	// 		// 	"args": {
+	// 		// 		"times": 10,
+	// 		// 	},
+	// 		// }, /// This does not work!
+	// 	],
+	// }, /// Deprecated. Replaced by the solution of a signle .ts file.
 }
