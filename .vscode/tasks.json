@@ -19,7 +19,7 @@
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
+				"${fileDirname}/${fileBasenameNoExtension}.exe",
 			],
 			"problemMatcher": ["$gcc"],
 			"presentation": {
@@ -36,7 +36,7 @@
 				"kind": "test"
 			},
 
-			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"command": "${fileDirname}/${fileBasenameNoExtension}.exe",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -55,7 +55,7 @@
 			"args": [
 				"ts-node",
 				"${workspaceFolder}/Utility.d/ExeLoop.ts",
-				"${fileDirname}/${fileBasenameNoExtension}",
+				"${fileDirname}/${fileBasenameNoExtension}.exe",
 			],
 			"presentation": {
 				"echo": true,
@@ -72,7 +72,7 @@
 			},
 
 			"dependsOn": ["Compile Current File - BiS"],
-			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"command": "${fileDirname}/${fileBasenameNoExtension}.exe",
 			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"echo": true,
