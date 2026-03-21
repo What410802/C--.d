@@ -1,7 +1,7 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-		{
+		{ // For C++ only.
 			"label": "Compile Current File - BiS",
 			"type": "shell",
 			"group": {
@@ -14,12 +14,12 @@
 				"-Wpedantic",
 				"-Wall",
 				"-Wextra",
-				"-std=c++17",
+				"-std=c++11",
 				"-O2",
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}.exe",
+				"${fileDirname}${/}${fileBasenameNoExtension}.exe",
 			],
 			"problemMatcher": ["$gcc"],
 			"presentation": {
@@ -29,14 +29,29 @@
 				"panel": "shared",
 			},
 		},
-		{
+		{ // For C++ only.
 			"label": "Run Only - BiS",
 			"type": "shell",
 			"group": {
 				"kind": "test"
 			},
 
-			"command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+			"command": "${fileDirname}${/}${fileBasenameNoExtension}.exe",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+			},
+		},
+		{ // For Python only.
+			"label": "Run Only (Python) - BiS",
+			"type": "shell",
+			"group": {
+				"kind": "test"
+			},
+
+			"command": "python3 ${file}",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -49,13 +64,14 @@
 			"type": "shell",
 			
 			"options": {
-				"cwd": "${workspaceFolder}/Utility.d",
+				"cwd": "${workspaceFolder}${/}Utility.d",
 			},
 			"command": "bunx", // "${command:macros.loopRunCpp}", // in `.vscode/settings.json`
 			"args": [
 				"ts-node",
-				"${workspaceFolder}/Utility.d/ExeLoop.ts",
-				"${fileDirname}/${fileBasenameNoExtension}.exe",
+				"${workspaceFolder}${/}Utility.d${/}ExeLoop.ts",
+				"${fileDirname}${/}${fileBasenameNoExtension}",
+				"${fileExtname}",
 			],
 			"presentation": {
 				"echo": true,
@@ -72,7 +88,7 @@
 			},
 
 			"dependsOn": ["Compile Current File - BiS"],
-			"command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+			"command": "${fileDirname}${/}${fileBasenameNoExtension}.exe",
 			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"echo": true,

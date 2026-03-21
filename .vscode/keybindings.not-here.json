@@ -1,27 +1,32 @@
 [
-	{
+	{ // C++ only (compiling)
 		"key": "f9",
 		"command": "workbench.action.tasks.runTask",
 		"args": "Compile Current File - BiS",
-		"when": "editorLangId == cpp && editorTextFocus"
+		"when": "editorLangId == cpp && config.BiS.Dev-C++-hotkeys.enabled",
 	},
-	{
+	{ // C++ only
 		"key": "f10",
 		"command": "workbench.action.tasks.runTask",
 		"args": "Run Only - BiS",
-		"when": "editorLangId == cpp && editorTextFocus"
+		"when": "editorLangId == cpp && config.BiS.Dev-C++-hotkeys.enabled",
 	},
-	{
+	{ // Python only
+		"key": "f10",
+		"command": "workbench.action.tasks.runTask",
+		"args": "Run Only (Python) - BiS",
+		"when": "editorLangId == python && config.BiS.Dev-C++-hotkeys.enabled",
+	},
+	{ // C++ only (because involves compiling)
 		"key": "f11",
 		"command": "workbench.action.tasks.runTask",
 		"args": "Compile and Run - BiS",
-		"when": "editorLangId == cpp && editorTextFocus"
+		"when": "editorLangId == cpp && config.BiS.Dev-C++-hotkeys.enabled",
 	},
 	{
 		"key": "ctrl+f10",
 		"command": "workbench.action.tasks.runTask",
-		"args": "Run Only - BiS",
-		"when": "editorLangId == cpp && editorTextFocus"
-	}
+		"args": "Looped Run - BiS",
+		"when": "(editorLangId == cpp || editorLangId == python) && config.BiS.Dev-C++-hotkeys.enabled",
+	},
 ]
-/// These should be placed in "%USERPROFILE%\AppData\Roaming\Code\User\profiles\353a5650\keybindings.json" (for a single profile numbered 353a5650) or "%USERPROFILE%\AppData\Roaming\Code\User\keybindings.json" (for a user)!
