@@ -16,7 +16,15 @@ def O(o: typing.Any):
 # import enum
 # import copy, functools
 
-n=I(int)
-
+h=I(int)
+w=I(int)
+cnt=0
+get_2025 = lambda cnt: "2025"[cnt]
+for i in range(h):
+	cnt = i%4
+	for j in range(w):
+		O(get_2025(cnt))
+		cnt = (cnt+1)%4
+	O('\n')
 
 sys.stdout.write("".join(_stdout))
