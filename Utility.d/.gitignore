@@ -1,3 +1,6 @@
+# BiS
+!compile_selector.exe
+
 # dependencies (bun install)
 node_modules
 

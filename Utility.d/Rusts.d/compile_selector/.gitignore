@@ -1,0 +1,3 @@
+target/**
+!target/release/compile_opts.toml
+!target/release/compile_selector*

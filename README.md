@@ -2,7 +2,12 @@
 
 ## VSCode Configuration for Algorithm Competition (C++ any / Python 3)
 
-Prerequisites:
+### Features
+
++ Using this configuration set, you can use VSCode to write, compile and run C++/Python codes easily! (`F9`: Compile. `F10`: Run. `F11`: Compile & Run.)
++ You can customize compiling options for different OJ: modifying `Utility.d/compile_opts.toml` is enough. (The corresponding `.exe` compiled by Rust will do the rest of the work.)
+
+### Prerequisites
 - Bun installed on your computer, for looping running. (Or anything you like. :\) If you do not need this feature, you can skip this.)
 	- Install Bun ([<img src="README_assets/bun.svg" style="height: 1em; vertical-align: text-bottom;"><img src="README_assets/bun_text.png" style="height: 1em; vertical-align: text-bottom;"> bun.sh](https://bun.sh));
 	- `cd Utility.d` and `bun install`.
@@ -16,6 +21,7 @@ Prerequisites:
 	
 	If you are using a VSCode Profile, then paste it to the keybindings in `(your path above)/profiles/(a string of number representing your target profile)`.
 
-Usage:
-- To change the standard of C++, go to `.vscode/tasks.json` and modify `"args"` in the first task (i.e., the compile task).
-- For Python, after inputting all the data needed, use `Ctrl+Z` to put an end to the input stream. (`Enter` is needed before and after the `Ctrl+Z`.)
+### Usage
+- To start with, copy the things inside `.vscode/keybindings.not-here.json` as <a href="#prerequisites">Prerequisites</a> describes.
+- For Python input, after inputting all the data needed, use `Ctrl+Z` to put an end to the input stream. (`Enter` is needed before and after the `Ctrl+Z`.)
+- To add more OJs and their C++ standard, just append them to `Utility.d/compile_opts.toml`.

@@ -1,0 +1,9 @@
+[opts]
+"codeforces.com" = "-std=c++20"
+"gplt.pintia.cn" = "-std=gnu++20 -O2"
+"lanqiao.cn" = "-std=c++11 -O2"
+"luogu.com.cn" = "-std=c++20 -O2"
+"matiji.net" = "-std=c++11 -O2"
+#"nowcoder.com"="-std=c++14"
+"oj.xjtuicpc.com"="-std=c++17 -O2"
+"oj.ustc.edu.cn"="-std=c++17 -O2"

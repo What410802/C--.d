@@ -1,5 +1,8 @@
 .*
 !.git*
 !.vscode
+
+*.old
 test.d
 *.exe
+!Utility.d/Rusts.d/**

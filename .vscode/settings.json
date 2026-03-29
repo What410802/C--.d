@@ -1,5 +1,0 @@
-{
-	"BiS.Dev-C++-hotkeys.enabled": true,
-	"python-envs.defaultEnvManager": "ms-python.python:conda",
-	"python-envs.defaultPackageManager": "ms-python.python:conda", // VSCode does not support per-project configuration of keybindings.json, so I wrote the settings for hotkeys in per-profile settings, and use this enable=true to enable them for this project (in case sometimes these keybindings need to be turned off).
-}

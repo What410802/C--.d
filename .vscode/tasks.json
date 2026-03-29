@@ -9,18 +9,25 @@
 				"isDefault": true,
 			},
 
-			"command": "g++",
+			// "command": "g++",
+			// "args": [
+			// 	"-Wpedantic",
+			// 	"-Wall",
+			// 	"-Wextra",
+			// 	"-std=c++11",
+			// 	"-O2",
+			// 	"-g",
+			// 	"${file}",
+			// 	"-o",
+			// 	"${fileDirname}${/}${fileBasenameNoExtension}.exe",
+			// ],
+			"command": "${workspaceFolder}${/}Utility.d${/}compile_selector.exe",
 			"args": [
-				"-Wpedantic",
-				"-Wall",
-				"-Wextra",
-				"-std=c++11",
-				"-O2",
-				"-g",
+				"${fileWorkspaceFolderBasename}",
 				"${file}",
-				"-o",
 				"${fileDirname}${/}${fileBasenameNoExtension}.exe",
 			],
+
 			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"echo": true,
