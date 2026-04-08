@@ -24,9 +24,9 @@
 		{
 			"path": "../oj.ustc.edu.cn"
 		},
-		// {
-		// 	"path": "../Utility.d/Rusts.d/compile_selector"
-		// },
+		{
+			"path": "../Utility.d/Rusts.d/compile_selector"
+		},
 	],
 	"settings": {
 		"BiS.Dev-C++-hotkeys.enabled": true, // VSCode does not support per-project configuration of keybindings.json, so I wrote the settings for hotkeys in per-profile settings, and use this enable=true to enable them for this project (in case sometimes these keybindings need to be turned off).

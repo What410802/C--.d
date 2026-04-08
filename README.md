@@ -20,6 +20,12 @@
 	- `~/Library/Application Support/Code/User` (MacOS, not sure because I does not have one :\( ). 
 	
 	If you are using a VSCode Profile, then paste it to the keybindings in `(your path above)/profiles/(a string of number representing your target profile)`.
+- Enable `config`'s `BiS.Dev-C++-hotkeys.enabled`: Open `settings.json` in the same directory with `keybindings.json`. Add one line in the outmost `{}`:
+```json
+    "BiS.Dev-C++-hotkeys.enabled": true,
+```
+- If you are using Linux, don't forget to re-compile (`cargo b -r`) the `Utility.d/Rusts.d/compile_selector` project to `Utility.d/compile_selector.exe`. (If you are unfamiliar with that, go to `rustup.rs` and get your hands on Rust! :\) ) Then move the compiled `Utility.d/Rusts.d/compile_selector/target/release/compile_selector` to `Utility.d/compile_selector.exe`. (You can also run `git update-index --skip-worktree Utility.d/compile_selector.exe` to skip tracking this file.)
+<!-- add execution permission to `Utility.d/compile_selector.exe`, like `chmod +x {path to the .exe}`. -->
 
 ### Usage
 - To start with, copy the things inside `.vscode/keybindings.not-here.json` as <a href="#prerequisites">Prerequisites</a> describes.
