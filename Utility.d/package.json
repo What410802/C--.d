@@ -1,14 +1,12 @@
 {
   "name": "utility.d",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.9.3"
+    "@types/bun": "*",
+    "typescript": "^5.9.0"
   },
   "dependencies": {
-    "@types/node": "^25.3.5",
-    "ts-node": "^10.9.2"
+    "@types/node": "*"
   }
 }

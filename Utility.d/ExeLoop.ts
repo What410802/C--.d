@@ -1,7 +1,7 @@
 import { spawn } from 'child_process';
 import * as path from 'path';
 
-const fileNoExtension = (process.argv[2] as string).toLowerCase(), fileExtname = (process.argv[3] as string).toLowerCase();
+const fileNoExtension = (process.argv[2] as string), fileExtname = (process.argv[3] as string);
 
 function oneTime(command: string, parameters: string[]): Promise<Number> {
 	return new Promise((resolve, reject) => {

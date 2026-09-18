@@ -73,9 +73,8 @@
 			"options": {
 				"cwd": "${workspaceFolder}${/}Utility.d",
 			},
-			"command": "bunx", // "${command:macros.loopRunCpp}", // in `.vscode/settings.json`
+			"command": "bun", // "${command:macros.loopRunCpp}", // in `.vscode/settings.json`
 			"args": [
-				"ts-node",
 				"${workspaceFolder}${/}Utility.d${/}ExeLoop.ts",
 				"${fileDirname}${/}${fileBasenameNoExtension}",
 				"${fileExtname}",
